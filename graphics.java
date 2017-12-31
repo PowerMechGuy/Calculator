@@ -16,6 +16,9 @@ public class graphics {
 	
 	//This String will be used to differentiate between various types of arithmatic
 	String function = null;
+ 
+ 	//this char will be used for the switch function
+  char funct;
 	
 	public void setup()
 	{
@@ -144,6 +147,7 @@ public class graphics {
 			int first = 0;
 			//this int to store the actual second number
 			int second = 0;
+   		
 			
 			
 			//First we'll check what button is being pressed using the following code
@@ -199,21 +203,22 @@ public class graphics {
 				outputnumber.setText(null);
 				first = Integer.parseInt(Firstnumber);
 				second = Integer.parseInt(Secondnumber);
-				switch(function)
+    			funct = function.charAt(0);
+				switch(funct)
 				{
-					case"+":
+					case'+':
 						result = first + second;
 						outputnumber.setText(String.valueOf(result));
 						break;
-					case"-":
+					case'-':
 						result = first - second;
 						outputnumber.setText(String.valueOf(result));
 						break;
-					case"x":
+					case'x':
 						result = first * second;
 						outputnumber.setText(String.valueOf(result));
 						break;
-					case"/":
+					case'/':
 						result = first / second;
 						outputnumber.setText(String.valueOf(result));
 						break;
